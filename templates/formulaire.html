@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Déclarer une présentation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h2>Déclarer une présentation</h2>
+<form method="POST">
+    <label>Classe :</label>
+    <select name="classe">
+        {% for c in classes %}
+        <option value="{{ c }}">{{ c }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Enseignant :</label>
+    <select name="enseignant">
+        {% for e in enseignants %}
+        <option value="{{ e }}">{{ e }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Spécialité :</label>
+    <select name="specialite">
+        {% for s in specialites %}
+        <option value="{{ s }}">{{ s }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Date :</label>
+    <input type="date" name="date" required><br><br>
+
+    <label>Pendant le cours ?</label>
+    <select name="pendant_cours">
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+    </select><br><br>
+
+    <button type="submit">Envoyer</button>
+</form>
+<br>
+<a href="/">Voir toutes les présentations</a>
+</body>
+</html>
